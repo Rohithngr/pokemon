@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout.component';
+import { DetailsComponent } from './details/details.component';
+
 
 const routes: Routes = [
   {
@@ -10,6 +12,9 @@ const routes: Routes = [
       },
       {
         path:'', redirectTo:'home', pathMatch:'full'
+      },
+      {
+        path:'details/:name', component:DetailsComponent
       }
     ]
   }

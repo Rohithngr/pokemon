@@ -10,7 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { SearchPipePipe } from '../pipe/search-pipe/search-pipe.pipe';
-
+import {NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [SearchPipePipe],
   imports: [
@@ -21,7 +21,8 @@ import { SearchPipePipe } from '../pipe/search-pipe/search-pipe.pipe';
     MatListModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule 
+    FormsModule ,
+    NgChartsModule
   ],
   exports:[
     MatSidenavModule,
@@ -30,7 +31,8 @@ import { SearchPipePipe } from '../pipe/search-pipe/search-pipe.pipe';
     MatButtonModule,
     MatIconModule,
     FormsModule ,
-    SearchPipePipe
+    SearchPipePipe,
+    NgChartsModule
   ]
 })
 export class SharedModule { }

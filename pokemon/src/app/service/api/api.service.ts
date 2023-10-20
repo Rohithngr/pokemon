@@ -11,10 +11,17 @@ export class ApiService {
   constructor(private http:HttpClient) {}
 
   getPokemonName(){
-    return this.http.get(`${this.baseurl}/pokemon?limit=10&offset=0`)
+    return this.http.get(`${this.baseurl}/pokemon?limit=25&offset=0`)
   }
   getPokemonDetails(name:any){
     return this.http.get(`${this.baseurl}/pokemon/${name}`)
   }
+  getPokemonEvloutionURL(name:any){
+    return this.http.get(`${this.baseurl}/pokemon-species/${name}`)
+  }
+  getPokemonEvloutionDetails(url:any){
+    return this.http.get(url);
+  }
+
 
 }

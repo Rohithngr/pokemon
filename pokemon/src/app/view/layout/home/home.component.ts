@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/service/api/api.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class HomeComponent implements OnInit {
   pokemonDetails:any=[]
   searchTerm:any
 
-  constructor(private api:ApiService) { }
+  constructor(private api:ApiService, private router:Router) { }
 
 
   ngOnInit(): void {
@@ -20,8 +21,7 @@ export class HomeComponent implements OnInit {
   pokemon(){
     this.api.getPokemonName().subscribe(
       (resp:any)=>{
-        console.log(resp);
-        
+
         this.pokemonDetails=resp.results
       },
      (err:any)=>{
@@ -33,14 +33,11 @@ export class HomeComponent implements OnInit {
     if (data.length > 0) {
       return data.charAt(0);
     } else {
-      return ''; // Handle the case where the string is empty
+      return ''; 
     }
   }
 
-
-  search(event:any){
-    const value=event.target.value;
-    console.log(value);
-    
+  goToDetails(name:any){
+    this.router.navigate(['pokemon/details/'+name])
   }
 }

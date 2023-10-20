@@ -1,17 +1,17 @@
 <div class="container">
     <div class="row">
         <div class="col-md-9 col-12">
-           <h1>Pokemon</h1>
+           <h1>Pokémon</h1>
         </div>
     </div>
     <div class="row justify-content-end">
             <div class="col-md-2 col-12">
-            <input type="text" class="form-control" [(ngModel)]="searchTerm" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" [(ngModel)]="searchTerm" placeholder="Search Pokémon" >
         </div>
     </div>
     <div class="row mt-2" >
         <div *ngFor="let item of pokemonDetails | search: searchTerm" class="col-12 col-md-2 col-lg-2">
-            <div  class="card text-center  mt-2"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div  class="card text-center  mt-2 card-pokemon" (click)="goToDetails(item.name)">
                 <div class="card-body" >
                  <div class="row">
                     <div class="col-4">

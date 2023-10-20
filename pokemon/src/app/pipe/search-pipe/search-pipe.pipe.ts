@@ -13,7 +13,6 @@ export class SearchPipePipe implements PipeTransform {
     searchTerm = searchTerm.toLowerCase();
 
     return items.filter(item => {
-      // Customize this condition based on your search criteria.
       return item.name.toLowerCase().includes(searchTerm);
     });
   }
